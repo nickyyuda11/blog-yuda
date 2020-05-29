@@ -1,0 +1,19 @@
+baseURL = "https://blissful-galileo-f47af2.netlify.app/"
+languageCode = "en-us"
+title = "Blog Faisal"
+theme = "devclass-theme"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[menu]
+  [[menu.main]]
+  name = "About"
+  url = "/about/"
+  [[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+[params]
+  author = "Faisal Indrianto"

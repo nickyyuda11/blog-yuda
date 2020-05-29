@@ -1,0 +1,20 @@
+{{ define "main" }}
+    <div class="index-content">
+        {{ .Content }}
+    </div>
+
+    {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+    <article class="post-list">
+        <header> 
+            <h1>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h1>
+        </header>
+        <small>{{ .Date }}</small>
+        <div class="content">
+            {{ .Summary }}
+        </div>
+    </article>
+    {{ end }}
+
+{{ end }}

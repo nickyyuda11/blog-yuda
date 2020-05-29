@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+    <h1>Kategori : {{ .Title }}</h1>
+    <div class="article-info">
+        <a href="{{ "categories/" | absLangURL }}">{{ i18n "toAllCategories" | humanize }}</a>
+    </div>
+    {{ range .Data.Pages }}
+    <article class="post-list">
+        <header> 
+            <h1>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h1>
+        </header>
+        <div class="content">
+            {{ truncate 80 .Summary }}
+            <div class="read-more">
+                <a href="{{ .RelPermalink }}">Read More</a>
+            </div>
+        </div>
+    </article>
+    {{ end }}
+
+{{ end }}

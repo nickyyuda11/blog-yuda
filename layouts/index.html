@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+    {{ range where site.RegularPages "Type" "in" site.Params.mainSections }}
+    <article class="post-list">
+        <header> 
+            <h1>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h1>
+        </header>
+        <small>{{ .Date }}</small>
+        <div class="content">
+            {{ truncate 80 .Summary }}
+            <div class="read-more">
+                <a href="{{ .RelPermalink }}">Read More</a>
+            </div>
+        </div>
+    </article>
+    {{ partial "categories.html" .}}
+    {{ end }}
+
+{{ end }}
